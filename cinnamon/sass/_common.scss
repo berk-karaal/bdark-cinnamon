@@ -327,11 +327,13 @@ StScrollBar {
 .menu {
   color: $fg_color;
   border: 1px solid $borders_color;
-  border-radius: 3px;
-  background-color: transparentize($bg_color, 0.01);
+  background-color: transparentize($bg_color, 0.1);
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 
   &.top {
-    border-radius: 0 0 3px 3px;
+    border-radius: 10px 10px 15px 15px;
   }
 
   &.bottom {
@@ -1686,16 +1688,15 @@ StScrollBar {
 //
 .menu {
   &-favorites-box {
-    padding: 10px;
+    padding: 10px, 5px;
     transition-duration: 300;
-    background-color: $base_color;
-    border: 1px solid $borders_color;
+    background-color: transparentize($base_color, 0.9);
   }
 
   &-favorites-button {
     padding: .9em 1em;
     border: 1px solid rgba(0, 0, 0, 0);
-    border-radius: 2px;
+    border-radius: 8px;
 
     &:hover {
       background-color: $selected_bg_color;
@@ -1737,6 +1738,7 @@ StScrollBar {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
       border: 1px solid $borders_color;
+      border-radius: 5px;
 
       &:highlighted {
         font-weight: bold;
@@ -1761,6 +1763,7 @@ StScrollBar {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
       border: 1px solid $borders_color;
+      border-radius: 5px;
     }
 
     &-hover {
