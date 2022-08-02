@@ -1,14 +1,13 @@
 // When color definition differs for dark and light variant,
 // it gets @if ed depending on $variant
 
-// We need to set this first because we use it to tint many
-// of the remaining colors
-$selected_bg_color: if($variant == 'light', #92b372, #8fa876);
+// Only configured dark colors and didn't remove light colors for now.
+$selected_bg_color: if($variant == 'light', #92b372, rgb(89, 110, 181));
 
-$base_color: if($variant =='light', mix($selected_bg_color, #ffffff, 2%), mix($selected_bg_color, #404040, 2%));
-$text_color: if($variant == 'light', #202020, #D3D3D3);
-$bg_color: if($variant == 'light', mix($selected_bg_color, #f5f5f5, 2%), mix($selected_bg_color, #2f2f2f, 1.5%));
+$bg_color: if($variant == 'light', mix($selected_bg_color, #f5f5f5, 2%), rgb(24,24,24));
 $fg_color: if($variant =='light', transparentize(black, 0.13), transparentize(white, 0.13));
+$base_color: if($variant =='light', mix($selected_bg_color, #ffffff, 2%), mix($bg_color, rgb(255, 255, 255), 98));
+$text_color: if($variant == 'light', #202020, #D3D3D3);
 
 $selected_fg_color: #ffffff;
 
@@ -25,9 +24,9 @@ $destructive_color: #F04A50;
 
 $insensitive_fg_color: if($variant == 'light', transparentize($fg_color, 0.45), transparentize($fg_color, 0.55));
 
-$tooltip_bg_color: #fbeaa0;
-$tooltip_fg_color: #4a4a4a;
-$tooltip_border_color: #d0d0d0;
+$tooltip_bg_color: rgba(10,10,10,1);
+$tooltip_fg_color: #ececec;
+$tooltip_border_color: lighten($tooltip_bg_color, 20%);
 
 $osd_fg_color: #c3c3c3;
 $osd_bg_color: #353535;
