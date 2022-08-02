@@ -1864,7 +1864,7 @@ StScrollBar {
   padding: 20px;
 
   color: $fg_color;
-  background-color: $bg_color;
+  background-color: transparentize($bg_color, 0.7);
   border: 1px solid $borders_color;
   border-radius: 5px;
 
@@ -1874,7 +1874,7 @@ StScrollBar {
 
   .level {
     padding: 0;
-    height: 0.7em;
+    height: 0.6em;
     background-color: transparentize(black, 0.5);
     border-radius: 2px;
   }
