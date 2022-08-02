@@ -810,6 +810,8 @@ StScrollBar {
   padding: 5px 8px;
   -cinnamon-caption-spacing: 4px;
   @include entry(osd);
+  background-color: transparentize($bg_color, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.4);
 
   &:focus {
     border: 1px solid $selected_bg_color;
@@ -835,7 +837,7 @@ StScrollBar {
 }
 
 .expo-background {
-  background-color: opacify($osd_bg_color, 1);
+  background-color: transparentize($osd_bg_color, 0.5);
 }
 
 .workspace {
