@@ -4,7 +4,7 @@
 // Only configured dark colors and didn't remove light colors for now.
 $selected_bg_color: if($variant == 'light', #92b372, rgb(89, 110, 181));
 
-$bg_color: if($variant == 'light', mix($selected_bg_color, #f5f5f5, 2%), rgb(24,24,24));
+$bg_color: if($variant == 'light', mix($selected_bg_color, #f5f5f5, 2%), rgb(20,20,20));
 $fg_color: if($variant =='light', transparentize(black, 0.13), transparentize(white, 0.13));
 $base_color: if($variant =='light', mix($selected_bg_color, #ffffff, 2%), mix($bg_color, rgb(255, 255, 255), 98));
 $text_color: if($variant == 'light', #202020, #D3D3D3);
