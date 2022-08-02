@@ -1999,7 +1999,7 @@ StScrollBar {
 
     &.top,
     &.bottom {
-      border-bottom-width: 2px;
+      border-bottom-width: 0px;
 
       & StLabel {
         padding-left: 2px;
@@ -2056,12 +2056,12 @@ StScrollBar {
   &-number-label {
     font-size: 0.8em;
     z-index: 99;
-    color: $tooltip_border_color;
+    color: $tooltip_fg_color;
   }
 
   &-badge {
     border-radius: 9999px;
-    background-color: $tooltip_fg_color;
+    background-color: transparentize($tooltip_bg_color, 0.3);
     margin: 0;
   }
 
@@ -2077,7 +2077,7 @@ StScrollBar {
     color: $fg_color;
     border: 1px solid $borders_color;
     background-color: $bg_color;
-    border-radius: 3px;
+    border-radius: 5px;
     padding: 0px;
 
     >StBoxLayout {
@@ -2086,7 +2086,7 @@ StScrollBar {
 
     .item-box {
       padding: 10px;
-      border-radius: 2px;
+      border-radius: 5px;
       spacing: 4px;
 
       &:outlined {
