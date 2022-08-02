@@ -1,5 +1,4 @@
-
-$asset_path: if($variant == 'dark', dark-assets, light-assets);
+$asset_path: if($variant =='dark', dark-assets, light-assets);
 
 stage {
   color: $fg_color;
@@ -17,17 +16,38 @@ stage {
   padding: 5px 32px;
   transition-duration: 0;
 
-  &, &:focus, &:hover, &:hover:focus, &:active, &:active:focus, &:insensitive {
+  &,
+  &:focus,
+  &:hover,
+  &:hover:focus,
+  &:active,
+  &:active:focus,
+  &:insensitive {
     border-radius: 2px;
   }
 
   @include button(normal);
 
-  &:focus { @include button(focus); }
-  &:hover { @include button(hover); }
-  &:hover:focus { @include button(focus-hover); }
-  &:active, &:active:focus { @include button(active); }
-  &:insensitive { @include button(insensitive); }
+  &:focus {
+    @include button(focus);
+  }
+
+  &:hover {
+    @include button(hover);
+  }
+
+  &:hover:focus {
+    @include button(focus-hover);
+  }
+
+  &:active,
+  &:active:focus {
+    @include button(active);
+  }
+
+  &:insensitive {
+    @include button(insensitive);
+  }
 }
 
 %osd_button {
@@ -38,10 +58,21 @@ stage {
 
   @include button(osd);
 
-  &:hover { @include button(osd-hover); }
-  &:focus { color: $selected_bg_color; }
-  &:active { @include button(osd-active); }
-  &:insensitive { @include button(osd-insensitive); }
+  &:hover {
+    @include button(osd-hover);
+  }
+
+  &:focus {
+    color: $selected_bg_color;
+  }
+
+  &:active {
+    @include button(osd-active);
+  }
+
+  &:insensitive {
+    @include button(osd-insensitive);
+  }
 }
 
 //
@@ -57,8 +88,14 @@ stage {
 
   @include entry(normal);
 
-  &:focus, &:hover { @include entry(focus); }
-  &:insensitive { @include entry(insensitive); }
+  &:focus,
+  &:hover {
+    @include entry(focus);
+  }
+
+  &:insensitive {
+    @include entry(insensitive);
+  }
 
   StIcon.capslock-warning {
     icon-size: 16px;
@@ -78,16 +115,26 @@ stage {
 
   @include entry(osd);
 
-  &:focus { @include entry(osd-focus); }
-  &:insensitive { @include entry(osd-insensitive); }
+  &:focus {
+    @include entry(osd-focus);
+  }
+
+  &:insensitive {
+    @include entry(osd-insensitive);
+  }
 }
 
 //
 // Scrollbars
 //
 StScrollView {
-  &.vfade { -st-vfade-offset: 68px; }
-  &.hfade { -st-hfade-offset: 68px; }
+  &.vfade {
+    -st-vfade-offset: 68px;
+  }
+
+  &.hfade {
+    -st-hfade-offset: 68px;
+  }
 }
 
 StScrollBar {
@@ -104,22 +151,27 @@ StScrollBar {
     border-radius: 8px;
   }
 
-  StButton#vhandle, StButton#hhandle {
+  StButton#vhandle,
+  StButton#hhandle {
     border-radius: 2px;
     background-color: mix($fg_color, $bg_color, 40%);
     border: 0px solid;
     margin: 0px;
 
-    &:hover { background-color: mix($fg_color, $bg_color, 30%); }
+    &:hover {
+      background-color: mix($fg_color, $bg_color, 30%);
+    }
 
-    &:active { background-color: $selected_bg_color; }
+    &:active {
+      background-color: $selected_bg_color;
+    }
   }
 }
 
 .separator {
   -gradient-height: 1px;
-  -gradient-start: rgba(0,0,0,0);
-  -gradient-end: rgba(0,0,0,0);
+  -gradient-start: rgba(0, 0, 0, 0);
+  -gradient-end: rgba(0, 0, 0, 0);
   -margin-horizontal: 1.5em;
   height: 1em;
 }
@@ -130,10 +182,10 @@ StScrollBar {
 .popup-slider-menu-item,
 .slider {
   -slider-height: 0.3em;
-  -slider-background-color: $button_border;                         //background of the trough
-  -slider-border-color: transparentize($bg_color, 0.7);             //trough border color
-  -slider-active-background-color: $selected_bg_color;              //active trough fill
-  -slider-active-border-color: transparentize($bg_color, 0.7);      //active trough border
+  -slider-background-color: $button_border; //background of the trough
+  -slider-border-color: transparentize($bg_color, 0.7); //trough border color
+  -slider-active-background-color: $selected_bg_color; //active trough fill
+  -slider-active-border-color: transparentize($bg_color, 0.7); //active trough border
   -slider-border-width: 1px;
   -slider-handle-radius: 0.5em;
   height: 1em;
@@ -154,7 +206,9 @@ StScrollBar {
     padding-top: 2px;
   }
 
-  StLabel { font-weight: normal; }
+  StLabel {
+    font-weight: normal;
+  }
 
   StBin {
     width: 16px;
@@ -162,11 +216,17 @@ StScrollBar {
     background-image: url("#{$asset_path}/checkbox/checkbox-unchecked.svg");
   }
 
-  &:focus StBin { background-image: url("#{$asset_path}/checkbox/checkbox-unchecked-focused.svg"); }
+  &:focus StBin {
+    background-image: url("#{$asset_path}/checkbox/checkbox-unchecked-focused.svg");
+  }
 
-  &:checked StBin { background-image: url("#{$asset_path}/checkbox/checkbox-checked.svg"); }
+  &:checked StBin {
+    background-image: url("#{$asset_path}/checkbox/checkbox-checked.svg");
+  }
 
-  &:focus:checked StBin { background-image: url("#{$asset_path}/checkbox/checkbox-checked-focused.svg"); }
+  &:focus:checked StBin {
+    background-image: url("#{$asset_path}/checkbox/checkbox-checked-focused.svg");
+  }
 }
 
 //
@@ -192,11 +252,17 @@ StScrollBar {
     background-image: url("#{$asset_path}/checkbox/radio-unchecked.svg");
   }
 
-  &:focus StBin { background-image: url("#{$asset_path}/checkbox/radio-unchecked.svg"); }
+  &:focus StBin {
+    background-image: url("#{$asset_path}/checkbox/radio-unchecked.svg");
+  }
 
-  &:checked StBin { background-image: url("#{$asset_path}/checkbox/radio-checked.svg"); }
+  &:checked StBin {
+    background-image: url("#{$asset_path}/checkbox/radio-checked.svg");
+  }
 
-  &:focus:checked StBin { background-image: url("#{$asset_path}/checkbox/radio-checked.svg"); }
+  &:focus:checked StBin {
+    background-image: url("#{$asset_path}/checkbox/radio-checked.svg");
+  }
 }
 
 //
@@ -207,10 +273,13 @@ StScrollBar {
   height: 20px;
   background-size: contain;
 
-  &-us, &-intl {
+  &-us,
+  &-intl {
     background-image: url("#{$asset_path}/switch/switch-off.svg");
 
-    &:checked { background-image: url("#{$asset_path}/switch/switch-on.svg"); }
+    &:checked {
+      background-image: url("#{$asset_path}/switch/switch-on.svg");
+    }
   }
 }
 
@@ -221,7 +290,9 @@ StScrollBar {
   color: $link_color;
   text-decoration: underline;
 
-  &:hover { color: lighten($link_color,10%); }
+  &:hover {
+    color: lighten($link_color, 10%);
+  }
 }
 
 //
@@ -242,12 +313,12 @@ StScrollBar {
 // Looking Glass
 //
 #LookingGlassDialog {
-    color: $fg_color;
-    border: 1px solid $borders_color;
-    border-radius: 3px;
-    background-color: $bg_color;
-    spacing: 4px;
-    padding: 8px;
+  color: $fg_color;
+  border: 1px solid $borders_color;
+  border-radius: 3px;
+  background-color: $bg_color;
+  spacing: 4px;
+  padding: 8px;
 }
 
 //
@@ -257,7 +328,7 @@ StScrollBar {
   color: $fg_color;
   border: 1px solid $borders_color;
   border-radius: 3px;
-	background-color: transparentize($bg_color, 0.01);
+  background-color: transparentize($bg_color, 0.01);
 
   &.top {
     border-radius: 0 0 3px 3px;
@@ -280,16 +351,28 @@ StScrollBar {
   background-color: $base_color;
   box-shadow: none;
 
-  .popup-menu-item:ltr { padding-right: 1.75em; }
-  .popup-menu-item:rtl { padding-left: 1.75em; }
+  .popup-menu-item:ltr {
+    padding-right: 1.75em;
+  }
+
+  .popup-menu-item:rtl {
+    padding-left: 1.75em;
+  }
 
   StScrollBar {
     padding: 4px;
-    StBin#trough, StBin#vhandle { border-width: 0; }
+
+    StBin#trough,
+    StBin#vhandle {
+      border-width: 0;
+    }
   }
 }
 
-.popup-menu-content { padding: 1em 0em 1em 0em; }
+.popup-menu-content {
+  padding: 1em 0em 1em 0em;
+}
+
 .popup-menu-item {
   padding: .4em 1.75em;
   spacing: 1em;
@@ -302,16 +385,20 @@ StScrollBar {
     // border-color: transparentize($fg_color, 0.89);
     background-color: $selected_bg_color;
   }
+
   &:insensitive {
     color: transparentize($fg_color, 0.5);
     background: none;
   }
 }
 
-.popup-inactive-menu-item { //all icons and other graphical elements
+.popup-inactive-menu-item {
+  //all icons and other graphical elements
   color: $fg_color;
 
-  &:insensitive { color: $insensitive_fg_color; }
+  &:insensitive {
+    color: $insensitive_fg_color;
+  }
 }
 
 
@@ -320,22 +407,36 @@ StScrollBar {
   color: white;
   color: $fg_color;
 
-  &-arrow { icon-size: 16px; }
+  &-arrow {
+    icon-size: 16px;
+  }
 
   .popup-sub-menu {
     background-color: $base_color;
     box-shadow: none;
 
-    .popup-menu-item:ltr { padding-right: 1.75em; }
-    .popup-menu-item:rtl { padding-left: 1.75em; }
+    .popup-menu-item:ltr {
+      padding-right: 1.75em;
+    }
+
+    .popup-menu-item:rtl {
+      padding-left: 1.75em;
+    }
 
     StScrollBar {
       padding: 4px;
-      StBin#trough, StBin#vhandle { border-width: 0; }
+
+      StBin#trough,
+      StBin#vhandle {
+        border-width: 0;
+      }
     }
   }
 
-  .popup-menu-content { padding: 1em 0em 1em 0em; }
+  .popup-menu-content {
+    padding: 1em 0em 1em 0em;
+  }
+
   .popup-menu-item {
     padding: .4em 1.75em;
     spacing: 1em;
@@ -348,24 +449,30 @@ StScrollBar {
       border-color: transparentize($fg_color, 0.89);
       background-color: transparentize($fg_color, 0.92);
     }
+
     &:insensitive {
       color: transparentize($fg_color, 0.5);
       background: none;
     }
   }
 
-  .popup-inactive-menu-item { //all icons and other graphical elements
+  .popup-inactive-menu-item {
+    //all icons and other graphical elements
     color: $fg_color;
 
-    &:insensitive { color: $insensitive_fg_color; }
+    &:insensitive {
+      color: $insensitive_fg_color;
+    }
   }
 
-  &-icon { icon-size: 16px; }
+  &-icon {
+    icon-size: 16px;
+  }
 }
 
 .popup-menu-boxpointer {
   -arrow-border-radius: 3px;
-  -arrow-background-color:  $bg_color;
+  -arrow-background-color: $bg_color;
   -arrow-border-width: 1px;
   -arrow-border-color: $borders_color;
   -arrow-base: 21px;
@@ -405,11 +512,17 @@ StScrollBar {
   font-weight: normal;
 }
 
-.popup-device-menu-item { spacing: .5em; }
+.popup-device-menu-item {
+  spacing: .5em;
+}
 
-.popup-subtitle-menu-item { font-weight: normal; }
+.popup-subtitle-menu-item {
+  font-weight: normal;
+}
 
-.nm-menu-item-icons { spacing: .5em; }
+.nm-menu-item-icons {
+  spacing: .5em;
+}
 
 //
 // Panel
@@ -428,15 +541,28 @@ StScrollBar {
 
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(255,0,0,0.05);
-      background-gradient-end: rgba(255,0,0,0.2);
+      background-gradient-start: rgba(255, 0, 0, 0.05);
+      background-gradient-end: rgba(255, 0, 0, 0.2);
     }
-    &:ltr { padding-right: 4px; }
-    &:rtl { padding-left: 4px; }
+
+    &:ltr {
+      padding-right: 4px;
+    }
+
+    &:rtl {
+      padding-left: 4px;
+    }
+
     &.vertical {
       padding: 0px;
-      &:ltr { padding-right: 0px; }
-      &:rtl { padding-left: 0px; }
+
+      &:ltr {
+        padding-right: 0px;
+      }
+
+      &:rtl {
+        padding-left: 0px;
+      }
     }
   }
 
@@ -444,15 +570,30 @@ StScrollBar {
 
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(0,0,255,0.05);
-      background-gradient-end: rgba(0,0,255,0.2);
+      background-gradient-start: rgba(0, 0, 255, 0.05);
+      background-gradient-end: rgba(0, 0, 255, 0.2);
     }
-    &:ltr { padding-left: 4px; spacing: 0px; }
-    &:rtl { padding-right: 4px; spacing: 0px; }
+
+    &:ltr {
+      padding-left: 4px;
+      spacing: 0px;
+    }
+
+    &:rtl {
+      padding-right: 4px;
+      spacing: 0px;
+    }
+
     &.vertical {
       padding: 0px;
-      &:ltr { padding-right: 0px; }
-      &:rtl { padding-left: 0px; }
+
+      &:ltr {
+        padding-right: 0px;
+      }
+
+      &:rtl {
+        padding-left: 0px;
+      }
     }
   }
 
@@ -461,8 +602,8 @@ StScrollBar {
 
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(0,255,0,0.05);
-      background-gradient-end: rgba(0,255,0,0.2);
+      background-gradient-start: rgba(0, 255, 0, 0.05);
+      background-gradient-end: rgba(0, 255, 0, 0.2);
     }
   }
 
@@ -479,16 +620,28 @@ StScrollBar {
 
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(255,0,0,0.05);
-      background-gradient-end: rgba(255,0,0,0.2);
+      background-gradient-start: rgba(255, 0, 0, 0.05);
+      background-gradient-end: rgba(255, 0, 0, 0.2);
     }
-    &:ltr { padding-right: 4px; }
-    &:rtl { padding-left: 4px; }
+
+    &:ltr {
+      padding-right: 4px;
+    }
+
+    &:rtl {
+      padding-left: 4px;
+    }
 
     &.vertical {
       padding: 0px;
-      &:ltr { padding-right: 0px; }
-      &:rtl { padding-left: 0px; }
+
+      &:ltr {
+        padding-right: 0px;
+      }
+
+      &:rtl {
+        padding-left: 0px;
+      }
     }
   }
 
@@ -496,16 +649,32 @@ StScrollBar {
 
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(0,0,255,0.05);
-      background-gradient-end: rgba(0,0,255,0.2);
+      background-gradient-start: rgba(0, 0, 255, 0.05);
+      background-gradient-end: rgba(0, 0, 255, 0.2);
     }
-    &:ltr { padding-left: 4px; spacing: 0px; }
-    &:rtl { padding-right: 4px; spacing: 0px; }
+
+    &:ltr {
+      padding-left: 4px;
+      spacing: 0px;
+    }
+
+    &:rtl {
+      padding-right: 4px;
+      spacing: 0px;
+    }
 
     &.vertical {
       padding: 0px;
-      &:ltr { padding-left: 0px; spacing: 0px; }
-      &:rtl { padding-right: 0px; spacing: 0px; }
+
+      &:ltr {
+        padding-left: 0px;
+        spacing: 0px;
+      }
+
+      &:rtl {
+        padding-right: 0px;
+        spacing: 0px;
+      }
     }
   }
 
@@ -519,13 +688,16 @@ StScrollBar {
 
     &:dnd {
       background-gradient-direction: vertical;
-      background-gradient-start: rgba(0,255,0,0.05);
-      background-gradient-end: rgba(0,255,0,0.2);
+      background-gradient-start: rgba(0, 255, 0, 0.05);
+      background-gradient-end: rgba(0, 255, 0, 0.2);
     }
   }
 
 
-  &-top, &-bottom, &-left, &-right {
+  &-top,
+  &-bottom,
+  &-left,
+  &-right {
     color: $selected_fg_color;
     border: none;
     background-color: transparentize($panel_bg, 0.01);
@@ -552,7 +724,9 @@ StScrollBar {
   &-dummy {
     background-color: transparentize($error_color, 0.5);
 
-    &:entered { background-color: transparentize($error_color, 0.4); }
+    &:entered {
+      background-color: transparentize($error_color, 0.4);
+    }
   }
 
   &-status-button {
@@ -580,14 +754,21 @@ StScrollBar {
   icon-size: 16px;
   padding: 0 1px;
 
-  &.warning { color: $warning_color; }
-  &.error { color: $error_color; }
+  &.warning {
+    color: $warning_color;
+  }
+
+  &.error {
+    color: $error_color;
+  }
 }
 
 //
 // Overview
 //
-#overview { spacing: 12px; }
+#overview {
+  spacing: 12px;
+}
 
 .window-caption {
   background-color: $osd_bg_color;
@@ -609,7 +790,7 @@ StScrollBar {
 .window-border {
   border: 3px $selected_bg_color;
   border-radius: 2px;
-  background-color: rgba(255,255,255,.05);
+  background-color: rgba(255, 255, 255, .05);
   /* Cover rounded corners and some bad adjustment gaps */
   box-shadow: 0 0 0 1px $selected_bg_color inset;
 }
@@ -640,8 +821,8 @@ StScrollBar {
 }
 
 .expo-workspace-thumbnail-frame {
-  border: 4px solid rgba(255,255,255,0.0);
-  background-color: rgba(255,255,255,0.0);
+  border: 4px solid rgba(255, 255, 255, 0.0);
+  background-color: rgba(255, 255, 255, 0.0);
   border-radius: 2px;
 
   &#active {
@@ -661,7 +842,10 @@ StScrollBar {
   &-thumbnails {
     spacing: 26px;
 
-    &-background, &-background:rtl { padding: 8px; }
+    &-background,
+    &-background:rtl {
+      padding: 8px;
+    }
   }
 
   &-add-button {
@@ -674,12 +858,16 @@ StScrollBar {
       background-image: url("common-assets/misc/add-workspace-hover.svg");
       transition-duration: 100;
     }
+
     &:active {
       background-image: url("common-assets/misc/add-workspace-active.svg");
       transition-duration: 100;
     }
   }
-  &-overview-background-shade { background-color: rgba(0,0,0,0.5); }
+
+  &-overview-background-shade {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }
 
 .workspace-close-button,
@@ -696,6 +884,7 @@ StScrollBar {
     height: 26px;
     width: 26px;
   }
+
   &:active {
     background-image: url("common-assets/misc/close-active.svg");
     background-size: 26px;
@@ -723,8 +912,8 @@ StScrollBar {
 // Calendar
 //
 .calendar {
-    spacing-rows: 0;
-    spacing-columns: 0;
+  spacing-rows: 0;
+  spacing-columns: 0;
 }
 
 .calendar-main-box {
@@ -740,8 +929,7 @@ StScrollBar {
   background-color: $base_color;
 }
 
-.calendar-events-no-events-box {
-}
+.calendar-events-no-events-box {}
 
 .calendar-events-no-events-button {
   margin: 6px 0 6px 0;
@@ -776,7 +964,7 @@ StScrollBar {
 }
 
 .calendar-event-button {
-  border: 1px solid rgba(0,0,0,0);
+  border: 1px solid rgba(0, 0, 0, 0);
 
   .calendar-event-time-past {
     color: transparentize($fg_color, 0.6);
@@ -784,6 +972,7 @@ StScrollBar {
     text-align: left;
     margin-bottom: .2em;
   }
+
   .calendar-event-time-present {
     color: $fg_color;
     font-weight: bold;
@@ -794,6 +983,7 @@ StScrollBar {
       color: $selected_bg_color;
     }
   }
+
   .calendar-event-time-future {
     color: $fg_color;
     font-weight: bold;
@@ -815,10 +1005,12 @@ StScrollBar {
     &:soon {
       font-weight: bold;
     }
+
     &:imminent {
       font-weight: bold;
       color: $warning_color;
     }
+
     &:current {
       font-weight: bold;
       color: $selected_bg_color;
@@ -828,6 +1020,7 @@ StScrollBar {
   &:hover {
     background-color: $selected_bg_color;
     border: 1px solid $borders_color;
+
     .calendar-event-time-past,
     .calendar-event-time-present,
     .calendar-event-time-future,
@@ -843,9 +1036,11 @@ StScrollBar {
       &:soon {
         font-weight: bold;
       }
+
       &:imminent {
         font-weight: bold;
       }
+
       &:current {
         font-weight: bold;
       }
@@ -853,11 +1048,10 @@ StScrollBar {
   }
 }
 
-.calendar-event-row-content {
-}
+.calendar-event-row-content {}
 
 .calendar-event-color-strip {
-    width: 2px;
+  width: 2px;
 }
 
 .calendar-today-home-button {
@@ -888,6 +1082,7 @@ StScrollBar {
     .calendar-today-day-label {
       color: $selected_fg_color
     }
+
     .calendar-today-date-label {
       color: $selected-fg-color
     }
@@ -910,16 +1105,26 @@ StScrollBar {
 .calendar-change-month-back {
   background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
-  &:focus, &:hover { background-image: url("common-assets/misc/calendar-arrow-left-hover.svg"); }
+  &:focus,
+  &:hover {
+    background-image: url("common-assets/misc/calendar-arrow-left-hover.svg");
+  }
 
-  &:active { background-image: url("common-assets/misc/calendar-arrow-left.svg"); }
+  &:active {
+    background-image: url("common-assets/misc/calendar-arrow-left.svg");
+  }
 
   &:rtl {
     background-image: url("common-assets/misc/calendar-arrow-right.svg");
 
-    &:focus, &:hover { background-image: url("common-assets/misc/calendar-arrow-right-hover.svg"); }
+    &:focus,
+    &:hover {
+      background-image: url("common-assets/misc/calendar-arrow-right-hover.svg");
+    }
 
-    &:active { background-image: url("common-assets/misc/calendar-arrow-right.svg"); }
+    &:active {
+      background-image: url("common-assets/misc/calendar-arrow-right.svg");
+    }
   }
 }
 
@@ -927,16 +1132,26 @@ StScrollBar {
 .calendar-change-month-forward {
   background-image: url("common-assets/misc/calendar-arrow-right.svg");
 
-  &:focus, &:hover { background-image: url("common-assets/misc/calendar-arrow-right-hover.svg"); }
+  &:focus,
+  &:hover {
+    background-image: url("common-assets/misc/calendar-arrow-right-hover.svg");
+  }
 
-  &:active { background-image: url("common-assets/misc/calendar-arrow-right.svg"); }
+  &:active {
+    background-image: url("common-assets/misc/calendar-arrow-right.svg");
+  }
 
   &:rtl {
     background-image: url("common-assets/misc/calendar-arrow-left.svg");
 
-    &:focus, &:hover { background-image: url("common-assets/misc/calendar-arrow-left-hover.svg"); }
+    &:focus,
+    &:hover {
+      background-image: url("common-assets/misc/calendar-arrow-left-hover.svg");
+    }
 
-    &:active { background-image: url("common-assets/misc/calendar-arrow-left.svg"); }
+    &:active {
+      background-image: url("common-assets/misc/calendar-arrow-left.svg");
+    }
   }
 }
 
@@ -993,7 +1208,7 @@ StScrollBar {
 
 .calendar-today {
   color: $fg_color;
-  background-color: if($variant == 'light', transparentize($selected_bg_color, 0.6), transparentize($selected_bg_color, 0.6));
+  background-color: if($variant =='light', transparentize($selected_bg_color, 0.6), transparentize($selected_bg_color, 0.6));
   border-width: 0;
 
   &:selected {
@@ -1006,7 +1221,7 @@ StScrollBar {
 
   &:selected {
     font-weight: bold;
-    background-color: if($variant == 'light', transparentize($fg_color, 0.7), transparentize($fg_color, 0.6));
+    background-color: if($variant =='light', transparentize($fg_color, 0.7), transparentize($fg_color, 0.6));
 
     &:hover {
       font-weight: bold;
@@ -1049,12 +1264,15 @@ StScrollBar {
     color: $fg_color;
     border-image: url("#{$asset_path}/misc/message.svg") 9 9 9 9;
 
-    .notification-button, .notification-icon-button {
+    .notification-button,
+    .notification-icon-button {
       @extend %button;
       padding: 5px;
     }
 
-    StEntry { @extend %entry; }
+    StEntry {
+      @extend %entry;
+    }
   }
 
   &.multi-line-notification {
@@ -1065,14 +1283,27 @@ StScrollBar {
   &-scrollview {
     max-height: 10em;
 
-    > .top-shadow, > .bottom-shadow { height: 1em; }
+    >.top-shadow,
+    >.bottom-shadow {
+      height: 1em;
+    }
 
-    &:ltr > StScrollBar { padding-left: 6px; }
-    &:rtl > StScrollBar { padding-right: 6px; }
+    &:ltr>StScrollBar {
+      padding-left: 6px;
+    }
+
+    &:rtl>StScrollBar {
+      padding-right: 6px;
+    }
   }
 
-  &-body { spacing: 5px; }
-  &-actions { spacing: 10px; }
+  &-body {
+    spacing: 5px;
+  }
+
+  &-actions {
+    spacing: 10px;
+  }
 }
 
 .notification {
@@ -1082,14 +1313,19 @@ StScrollBar {
     color: $fg_color;
   }
 
-  &-button, &-icon-button {
+  &-button,
+  &-icon-button {
     @extend %button;
     padding: 5px;
   }
 
-  &-icon-button > StIcon { icon-size: 32px; }
+  &-icon-button>StIcon {
+    icon-size: 32px;
+  }
 
-  StEntry { @extend %osd_entry; }
+  StEntry {
+    @extend %osd_entry;
+  }
 }
 
 //
@@ -1107,11 +1343,13 @@ StScrollBar {
   border-radius: 3px;
   padding: 20px;
 
-  > StBoxLayout {
+  >StBoxLayout {
     padding: 4px;
   }
 
-  &-item-container { spacing: 8px; }
+  &-item-container {
+    spacing: 8px;
+  }
 
   .item-box {
     padding: 8px;
@@ -1129,24 +1367,27 @@ StScrollBar {
     }
   }
 
-  .thumbnail { width: 256px; }
+  .thumbnail {
+    width: 256px;
+  }
 
   .thumbnail-box {
     padding: 2px;
     spacing: 4px;
   }
+
   .separator {
     width: 1px;
-    background: rgba(255,255,255,0.2);
+    background: rgba(255, 255, 255, 0.2);
   }
 }
 
 .switcher-arrow {
-  border-color: rgba(0,0,0,0);
+  border-color: rgba(0, 0, 0, 0);
   color: $fg_color;
 
   &:highlighted {
-    border-color: rgba(0,0,0,0);
+    border-color: rgba(0, 0, 0, 0);
     color: $selected_fg_color;
   }
 }
@@ -1178,14 +1419,21 @@ StScrollBar {
   background-image: url("common-assets/misc/corner-ripple.svg");
   background-size: contain;
 
-  &:rtl { background-image: url("common-assets/misc/corner-ripple.svg"); }
+  &:rtl {
+    background-image: url("common-assets/misc/corner-ripple.svg");
+  }
 }
 
 //
 // Modal dialogs
 //
-.lightbox { background-color: rgba(0, 0, 0, 0.4); }
-.flashspot { background-color: white; }
+.lightbox {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.flashspot {
+  background-color: white;
+}
 
 .modal-dialog {
   background-color: $bg_color;
@@ -1193,7 +1441,7 @@ StScrollBar {
   border-radius: 3px;
   padding: 5px 10px;
 
-  > StBoxLayout:first-child {
+  >StBoxLayout:first-child {
     padding: 10px;
   }
 
@@ -1230,7 +1478,9 @@ StScrollBar {
   border-radius: 3px;
   background-color: $bg_color;
 
-  > * { padding: 0; }
+  >* {
+    padding: 0;
+  }
 
   &-label {
     font-size: 1.3em;
@@ -1245,7 +1495,9 @@ StScrollBar {
     padding-top: 15px;
     text-align: center;
 
-    &.error { color: $error_color; }
+    &.error {
+      color: $error_color;
+    }
   }
 
   // &-error-label { color: $error_color; }
@@ -1259,6 +1511,7 @@ StScrollBar {
     padding-left: 15px;
     font-size: 1em;
   }
+
   &-entry {
     width: 21em;
     height: 1.2em;
@@ -1270,8 +1523,11 @@ StScrollBar {
 
     @include entry(osd);
 
-    &:focus { @include entry(focus); }
+    &:focus {
+      @include entry(focus);
+    }
   }
+
   .modal-dialog-button-box {
     border: none;
     box-shadow: none;
@@ -1302,11 +1558,14 @@ StScrollBar {
       padding-right: 17px;
     }
   }
+
   &-description {
     padding-left: 17px;
     width: 28em;
 
-    &:rtl { padding-right: 17px; }
+    &:rtl {
+      padding-right: 17px;
+    }
   }
 }
 
@@ -1324,15 +1583,29 @@ StScrollBar {
   &-item {
     color: #ccc;
 
-    &:hover { color: white }
+    &:hover {
+      color: white
+    }
 
-    &:ltr { padding-right: 1em; }
-    &:rtl { padding-left: 1em; }
+    &:ltr {
+      padding-right: 1em;
+    }
 
-    &-icon:ltr { padding-right: 17px; }
-    &-icon:rtl { padding-left: 17px; }
+    &:rtl {
+      padding-left: 1em;
+    }
 
-    &-name { font-size: 1.1em; }
+    &-icon:ltr {
+      padding-right: 17px;
+    }
+
+    &-icon:rtl {
+      padding-left: 17px;
+    }
+
+    &-name {
+      font-size: 1.1em;
+    }
   }
 }
 
@@ -1342,7 +1615,9 @@ StScrollBar {
 .magnifier-zoom-region {
   border: 2px solid rgba(128, 0, 0, 1);
 
-  .full-screen { border-width: 0px; }
+  .full-screen {
+    border-width: 0px;
+  }
 }
 
 //
@@ -1374,19 +1649,29 @@ StScrollBar {
 
   @include button(osd);
 
-  &:hover { @include button(osd-hover); }
-  &:active, &:checked { @include button(osd-active); }
+  &:hover {
+    @include button(osd-hover);
+  }
 
-  &:grayed { @include button(osd-insensitive); }
+  &:active,
+  &:checked {
+    @include button(osd-active);
+  }
+
+  &:grayed {
+    @include button(osd-insensitive);
+  }
 }
 
-.keyboard-subkeys { //long press on a key popup
+.keyboard-subkeys {
+  //long press on a key popup
   color: $osd_fg_color;
   padding: 5px;
   -arrow-border-radius: 2px;
   -arrow-background-color: $osd_bg_color;
   -arrow-border-width: 1px;
-  -arrow-border-color: transparentize(black, 0.6);;
+  -arrow-border-color: transparentize(black, 0.6);
+  ;
   -arrow-base: 20px;
   -arrow-rise: 10px;
   -boxpointer-gap: 5px;
@@ -1409,7 +1694,7 @@ StScrollBar {
 
   &-favorites-button {
     padding: .9em 1em;
-    border: 1px solid rgba(0,0,0,0);
+    border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 2px;
 
     &:hover {
@@ -1424,20 +1709,28 @@ StScrollBar {
       border: 0px solid red;
     }
 
-    &-button { padding: 10px; }
+    &-button {
+      padding: 10px;
+    }
   }
 
-  &-categories-box { padding: 10px 30px 10px 30px; }
+  &-categories-box {
+    padding: 10px 30px 10px 30px;
+  }
 
   &-applications-inner-box,
-  &-applications-outer-box { margin: 10px 10px 0 10px; }
+  &-applications-outer-box {
+    margin: 10px 10px 0 10px;
+  }
 
   &-application-button {
     padding: 7px;
-    border: 1px solid rgba(0,0,0,0);
+    border: 1px solid rgba(0, 0, 0, 0);
 
     // This style is used in menu application buttons for applications which were newly installed
-    &:highlighted { font-weight: bold; }
+    &:highlighted {
+      font-weight: bold;
+    }
 
     &-selected {
       padding: 7px;
@@ -1445,16 +1738,23 @@ StScrollBar {
       background-color: $selected_bg_color;
       border: 1px solid $borders_color;
 
-      &:highlighted { font-weight: bold; }
+      &:highlighted {
+        font-weight: bold;
+      }
     }
 
-    &-label:ltr { padding-left: 5px; }
-    &-label:rtl { padding-right: 5px; }
+    &-label:ltr {
+      padding-left: 5px;
+    }
+
+    &-label:rtl {
+      padding-right: 5px;
+    }
   }
 
   &-category-button {
     padding: 7px;
-    border: 1px solid rgba(0,0,0,0);
+    border: 1px solid rgba(0, 0, 0, 0);
 
     &-selected {
       padding: 7px;
@@ -1462,18 +1762,25 @@ StScrollBar {
       background-color: $selected_bg_color;
       border: 1px solid $borders_color;
     }
+
     &-hover {
       background-color: red;
       border-radius: 2px;
     }
+
     &-greyed {
       padding: 7px;
       color: $insensitive_fg_color;
-      border: 1px solid rgba(0,0,0,0);
+      border: 1px solid rgba(0, 0, 0, 0);
     }
 
-    &-label:ltr { padding-left: 5px; }
-    &-label:rtl { padding-right: 5px; }
+    &-label:ltr {
+      padding-left: 5px;
+    }
+
+    &-label:rtl {
+      padding-right: 5px;
+    }
   }
 
   // Name and description of the currently hovered item in the menu
@@ -1490,12 +1797,21 @@ StScrollBar {
     }
   }
 
-  &-selected-app-title { font-weight: bold; }
+  &-selected-app-title {
+    font-weight: bold;
+  }
 
-  &-selected-app-description { max-width: 150px; }
+  &-selected-app-description {
+    max-width: 150px;
+  }
 
-  &-search-box:ltr { padding-left: 30px; }
-  &-search-box-rtl { padding-right: 30px; }
+  &-search-box:ltr {
+    padding-left: 30px;
+  }
+
+  &-search-box-rtl {
+    padding-right: 30px;
+  }
 }
 
 #menu-search-entry {
@@ -1513,8 +1829,7 @@ StScrollBar {
 }
 
 /* Context menu (at the moment only for favorites) */
-.menu-context-menu {
-}
+.menu-context-menu {}
 
 //
 // OSD
@@ -1549,7 +1864,9 @@ StScrollBar {
   border: 1px solid $borders_color;
   border-radius: 5px;
 
-  .osd-monitor-label { font-size: 3em; }
+  .osd-monitor-label {
+    font-size: 3em;
+  }
 
   .level {
     padding: 0;
@@ -1606,7 +1923,9 @@ StScrollBar {
     &.bottom {
       border-bottom-width: 2px;
 
-      & StLabel { padding-left: 2px; }
+      & StLabel {
+        padding-left: 2px;
+      }
     }
 
     &.right {
@@ -1614,7 +1933,9 @@ StScrollBar {
       padding-right: 0px;
       border-right-width: 2px;
 
-      & StBin { padding-right: 0; }
+      & StBin {
+        padding-right: 0;
+      }
     }
 
     &.left {
@@ -1622,7 +1943,9 @@ StScrollBar {
       padding-right: 0px;
       border-left-width: 2px;
 
-      & StBin { padding-left: 1px; }
+      & StBin {
+        padding-left: 1px;
+      }
     }
 
     &:hover,
@@ -1688,7 +2011,9 @@ StScrollBar {
     &.bottom {
       border-bottom-width: 2px;
 
-      & StLabel { padding-left: 2px; }
+      & StLabel {
+        padding-left: 2px;
+      }
     }
 
     &.right {
@@ -1696,7 +2021,9 @@ StScrollBar {
       padding-right: 0px;
       border-right-width: 2px;
 
-      & StBin { padding-right: 0; }
+      & StBin {
+        padding-right: 0;
+      }
     }
 
     &.left {
@@ -1704,7 +2031,9 @@ StScrollBar {
       padding-right: 0px;
       border-left-width: 2px;
 
-      & StBin { padding-left: 1px; }
+      & StBin {
+        padding-left: 1px;
+      }
     }
 
     &:hover,
@@ -1751,7 +2080,7 @@ StScrollBar {
   }
 
   &-thumbnail-alert {
-    background: rgba(255,52,52,0.3);
+    background: rgba(255, 52, 52, 0.3);
   }
 
   &-thumbnail-menu {
@@ -1761,7 +2090,7 @@ StScrollBar {
     border-radius: 3px;
     padding: 0px;
 
-    > StBoxLayout {
+    >StBoxLayout {
       padding: 4px;
     }
 
@@ -1780,11 +2109,13 @@ StScrollBar {
       }
     }
 
-    .thumbnail { width: 256px; }
+    .thumbnail {
+      width: 256px;
+    }
 
     .separator {
       width: 1px;
-      background: rgba(255,255,255,0.2);
+      background: rgba(255, 255, 255, 0.2);
     }
   }
 }
@@ -1803,22 +2134,31 @@ StScrollBar {
     padding-right: 3px;
     padding-left: 3px;
   }
-  StIcon { icon-size: 1.4em; }
+
+  StIcon {
+    icon-size: 1.4em;
+  }
 }
 
 .sound-track {
-  &-infos { padding: 5px; }
+  &-infos {
+    padding: 5px;
+  }
+
   &-info {
     padding-top: 2px;
     padding-bottom: 2px;
 
-    StIcon { icon-size: 16px; }
+    StIcon {
+      icon-size: 16px;
+    }
 
     StLabel {
       padding-left: 5px;
       padding-right: 5px;
     }
   }
+
   &-box {
     padding-left: 15px;
     padding-right: 15px;
@@ -1829,11 +2169,18 @@ StScrollBar {
 .sound-seek-box {
   padding-left: 15px;
 
-  StLabel { padding-top: 2px; }
-  StIcon { icon-size: 16px; }
+  StLabel {
+    padding-top: 2px;
+  }
+
+  StIcon {
+    icon-size: 16px;
+  }
 }
 
-.sound-seek-slider { width: 140px; }
+.sound-seek-slider {
+  width: 140px;
+}
 
 .sound-volume-menu-item {
   padding: .4em 1.75em;
@@ -1845,13 +2192,15 @@ StScrollBar {
   }
 }
 
-.sound-playback-control { padding: 5px 10px 10px 10px; }
+.sound-playback-control {
+  padding: 5px 10px 10px 10px;
+}
 
 // 2.8
 .sound-player {
   // padding: 0 4px;
 
-  > StBoxLayout:first-child {
+  >StBoxLayout:first-child {
     padding: 5px 10px 12px 10px;
     spacing: 0.5em;
 
@@ -1860,15 +2209,22 @@ StScrollBar {
       height: 20px;
       border: 1px solid transparent;
 
-      StIcon { icon-size: 12px; }
+      StIcon {
+        icon-size: 12px;
+      }
 
-      &:hover { @include button(hover); }
-      &:active { @include button(active); }
+      &:hover {
+        @include button(hover);
+      }
+
+      &:active {
+        @include button(active);
+      }
     }
   }
 
   &-generic-coverart {
-    background: rgba(0,0,0,0.2);
+    background: rgba(0, 0, 0, 0.2);
   }
 
   &-overlay {
@@ -1891,17 +2247,24 @@ StScrollBar {
       border-radius: 2px;
       border: 1px solid transparent;
 
-      StIcon { icon-size: 16px; }
+      StIcon {
+        icon-size: 16px;
+      }
 
-      &:hover{ @include button(hover); }
-      &:active { @include button(active); }
+      &:hover {
+        @include button(hover);
+      }
+
+      &:active {
+        @include button(active);
+      }
     }
 
     StBoxLayout {
       padding-top: 2px;
     }
 
-    > StBoxLayout {
+    >StBoxLayout {
       spacing: 5px;
     }
   }
@@ -1911,10 +2274,10 @@ StScrollBar {
     padding: 0;
     border: none;
     -slider-height: 0.5em;
-    -slider-background-color: if($variant == 'light', $button_border, darken($bg_color, 5%));
-    -slider-border-color: rgba(0,0,0,0);
+    -slider-background-color: if($variant =='light', $button_border, darken($bg_color, 5%));
+    -slider-border-color: rgba(0, 0, 0, 0);
     -slider-active-background-color: $selected_bg_color;
-    -slider-active-border-color: rgba(0,0,0,0);
+    -slider-active-border-color: rgba(0, 0, 0, 0);
     -slider-border-width: 0px;
     -slider-handle-radius: 0px;
   }
@@ -2016,13 +2379,15 @@ StScrollBar {
     // border-bottom-width: 1px;
     transition-duration: 200;
 
-    &:hover { background-color: $selected_bg_color; }
+    &:hover {
+      background-color: $selected_bg_color;
+    }
   }
 
   &.vertical {
     padding-top: 2px;
     padding-bottom: 2px;
-    padding-left:0px;
+    padding-left: 0px;
     padding-right: 0px;
     spacing: 1px;
 
@@ -2039,7 +2404,9 @@ StScrollBar {
 #overview-corner {
   background-image: url("common-assets/misc/overview.png");
 
-  &:hover { background-image: url("common-assets/misc/overview-hover.png"); }
+  &:hover {
+    background-image: url("common-assets/misc/overview-hover.png");
+  }
 }
 
 //
@@ -2049,16 +2416,18 @@ StScrollBar {
   &-separator {
     padding: 1px 4px;
 
-    &.vertical { padding: 4px 1px; }
+    &.vertical {
+      padding: 4px 1px;
+    }
   }
 
   &-separator-line {
     width: 1px;
-    background: rgba(255,255,255, 0.12);
+    background: rgba(255, 255, 255, 0.12);
 
     &-vertical {
       height: 1px;
-      background: rgba(255,255,255, 0.12);
+      background: rgba(255, 255, 255, 0.12);
     }
   }
 
@@ -2110,8 +2479,8 @@ StScrollBar {
 
     &:hover,
     &:checked,
-    .applet-box:hover > &,
-    .applet-box:checked > & {
+    .applet-box:hover>&,
+    .applet-box:checked>& {
       color: $selected_fg_color;
       text-shadow: none;
     }
@@ -2123,18 +2492,18 @@ StScrollBar {
 // User Applet
 //
 .user-icon {
-    width: 32px;
-    height: 32px;
-    background-color: transparent;
-    border: none;
-    border-radius: 0;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 .user-label {
-    color: $fg_color;
-    font-size: 1em;
-    font-weight: bold;
-    margin: 0px;
+  color: $fg_color;
+  font-size: 1em;
+  font-weight: bold;
+  margin: 0px;
 }
 
 //
@@ -2205,9 +2574,13 @@ StScrollBar {
 //
 // Notification Applet
 //
-.notification-applet-padding { padding: .5em 1em; }
+.notification-applet-padding {
+  padding: .5em 1em;
+}
 
-.notification-applet-container { max-height: 100px; }
+.notification-applet-container {
+  max-height: 100px;
+}
 
 //
 // Tile Preview
@@ -2216,31 +2589,50 @@ StScrollBar {
   background-color: transparentize($selected_bg_color, 0.7);
   border: 1px solid $selected_bg_color;
 
-  &.snap { background-color: transparentize($selected_bg_color, 0.4); }
+  &.snap {
+    background-color: transparentize($selected_bg_color, 0.4);
+  }
 }
 
 .tile-hud {
   background-color: transparentize($selected_bg_color, 0.7);
   border: 1px solid $selected_bg_color;
 
-  &.snap { background-color: transparentize($selected_bg_color, 0.4); }
+  &.snap {
+    background-color: transparentize($selected_bg_color, 0.4);
+  }
 
-  &:top { border-top-width: 0px; }
-  &:bottom { border-bottom-width: 0px; }
-  &:left { border-left-width: 0px; }
-  &:right { border-right-width: 0px; }
+  &:top {
+    border-top-width: 0px;
+  }
+
+  &:bottom {
+    border-bottom-width: 0px;
+  }
+
+  &:left {
+    border-left-width: 0px;
+  }
+
+  &:right {
+    border-right-width: 0px;
+  }
+
   &:top-left {
     border-top-width: 0px;
     border-left-width: 0px;
   }
+
   &:top-right {
     border-top-width: 0px;
     border-right-width: 0px;
   }
+
   &:bottom-left {
     border-bottom-width: 0px;
     border-left-width: 0px;
   }
+
   &:bottom-right {
     border-bottom-width: 0px;
     border-right-width: 0px;
@@ -2250,6 +2642,6 @@ StScrollBar {
 .xkcd-box {
   padding: 6px;
   border: 0px;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   border-radius: 0px;
 }
