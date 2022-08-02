@@ -2301,6 +2301,7 @@ StScrollBar {
   padding: 2px;
   padding-top: 4px;
   transition-duration: 200;
+  border-radius: 5px;
 
   &.vertical {
     height: 1.5em;
