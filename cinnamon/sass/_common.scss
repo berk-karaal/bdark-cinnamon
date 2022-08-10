@@ -1167,6 +1167,7 @@ StScrollBar {
     font-weight: bold;
     color: $selected_fg_color;
     background-color: $selected_bg_color;
+    border-radius: 5px;
   }
 }
 
@@ -1197,8 +1198,9 @@ StScrollBar {
 
 .calendar-today {
   color: $fg_color;
-  background-color: if($variant =='light', transparentize($selected_bg_color, 0.6), transparentize($selected_bg_color, 0.6));
+  background-color: if($variant =='light', transparentize($selected_bg_color, 0.6), transparentize($selected_bg_color, 0.4));
   border-width: 0;
+  border-radius: 999px;
 
   &:selected {
     font-weight: bold;
