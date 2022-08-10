@@ -1602,7 +1602,7 @@ StScrollBar {
 // Magnifier
 //
 .magnifier-zoom-region {
-  border: 2px solid rgba(128, 0, 0, 1);
+  border: 2px solid $selected_bg_color;
 
   .full-screen {
     border-width: 0px;
