@@ -386,6 +386,7 @@ StScrollBar {
     color: $selected_fg_color;
     // border-color: transparentize($fg_color, 0.89);
     background-color: $selected_bg_color;
+    border-radius: 4px;
   }
 
   &:insensitive {
