@@ -113,12 +113,12 @@ StScrollBar {
   StScrollBar StButton#vhandle,
   StScrollBar StButton#hhandle {
     border-radius: 2px;
-    background-color: rgba(100, 100, 100, 0.948);
+    background-color: #303854;
     border: 0px solid;
     margin: 0px; }
     StScrollBar StButton#vhandle:hover,
     StScrollBar StButton#hhandle:hover {
-      background-color: rgba(78, 78, 78, 0.961); }
+      background-color: #4b5c95; }
     StScrollBar StButton#vhandle:active,
     StScrollBar StButton#hhandle:active {
       background-color: #596eb5; }
@@ -263,7 +263,8 @@ StScrollBar {
   border-right-width: 0; }
   .popup-menu-item:active {
     color: #ffffff;
-    background-color: #596eb5; }
+    background-color: #596eb5;
+    border-radius: 4px; }
   .popup-menu-item:insensitive {
     color: rgba(255, 255, 255, 0.37);
     background: none; }
@@ -774,7 +775,8 @@ StScrollBar {
   .calendar-day-base:hover {
     font-weight: bold;
     color: #ffffff;
-    background-color: #596eb5; }
+    background-color: #596eb5;
+    border-radius: 5px; }
 
 .calendar-day-heading {
   color: rgba(255, 255, 255, 0.72);
@@ -798,8 +800,9 @@ StScrollBar {
 
 .calendar-today {
   color: rgba(255, 255, 255, 0.87);
-  background-color: rgba(89, 110, 181, 0.4);
-  border-width: 0; }
+  background-color: rgba(89, 110, 181, 0.6);
+  border-width: 0;
+  border-radius: 999px; }
   .calendar-today:selected {
     font-weight: bold; }
 
@@ -1056,12 +1059,12 @@ StScrollBar {
       font-size: 1.1em; }
 
 .magnifier-zoom-region {
-  border: 2px solid maroon; }
+  border: 2px solid #596eb5; }
   .magnifier-zoom-region .full-screen {
     border-width: 0px; }
 
 #keyboard {
-  background-color: #353535;
+  background-color: rgba(20, 20, 20, 0.7);
   border-width: 0;
   border-top-width: 1px;
   border-color: rgba(0, 0, 0, 0.4); }
@@ -1078,7 +1081,7 @@ StScrollBar {
   min-width: 2em;
   font-size: 1.4em;
   font-weight: bold;
-  border-radius: 3px;
+  border-radius: 7px;
   box-shadow: none;
   color: #c3c3c3;
   border: 1px solid #050505;
@@ -1196,7 +1199,8 @@ StScrollBar {
   width: 250px;
   min-height: 16px;
   font-weight: normal;
-  caret-color: rgba(255, 255, 255, 0.87); }
+  caret-color: rgba(255, 255, 255, 0.87);
+  border-radius: 999px; }
 
 .menu-search-entry-icon {
   icon-size: 1em;
