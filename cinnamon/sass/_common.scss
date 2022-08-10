@@ -1809,6 +1809,7 @@ StScrollBar {
   min-height: 16px;
   font-weight: normal;
   caret-color: $fg_color;
+  border-radius: 999px;
 
   @extend %entry;
 }
