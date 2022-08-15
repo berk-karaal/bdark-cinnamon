@@ -1,12 +1,12 @@
 [Desktop Entry]
 Type=X-GNOME-Metatheme
-Name=Mint-Y-Dark
-Comment=A dark flat theme with transparent elements
+Name=Bdark-Cinnamon
+Comment=A theme that is dark and rounded
 Encoding=UTF-8
 
 [X-GNOME-Metatheme]
-GtkTheme=Mint-Y-Dark
-MetacityTheme=Mint-Y
+GtkTheme=Bdark-Cinnamon
+MetacityTheme=Bdark-Cinnamon
 IconTheme=Mint-Y-Dark
 CursorTheme=DMZ-Black
 ButtonLayout=menu:minimize,maximize,close
