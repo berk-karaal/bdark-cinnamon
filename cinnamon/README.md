@@ -8,4 +8,4 @@ In most cases edits will done in sass/_common.scss. The sass directory contains 
 
 * _drawing.scss Drawing helper mixins/functions to allow for easier definition of widget drawing
 
-Once you have made your edits run ./parse-sass.sh to update the css files
+Once you have made your edits run `$ source parse-sass.sh` to update the css files
