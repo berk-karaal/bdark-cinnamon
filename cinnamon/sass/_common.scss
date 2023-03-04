@@ -331,22 +331,7 @@ StScrollBar {
   margin-top: 10px;
   margin-left: 5px;
   margin-right: 5px;
-
-  &.top {
-    border-radius: 10px 10px 15px 15px;
-  }
-
-  &.bottom {
-    border-radius: 3px 3px 0 0;
-  }
-
-  &.left {
-    border-radius: 0 3px 3px 0;
-  }
-
-  &.right {
-    border-radius: 3px 0 0 3px;
-  }
+  border-radius: 10px 10px 15px 15px;
 }
 
 .popup-sub-menu {
